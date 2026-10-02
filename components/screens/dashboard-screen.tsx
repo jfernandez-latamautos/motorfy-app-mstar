@@ -29,13 +29,13 @@ const featureCards = [
     title: "REGISTRO DE VISITAS",
     description: "Registra tus visitas a dealers.",
     icon: CarFront,
-    accent: "bg-[#e5ffe9] text-[#0AAC5F]",
+    accent: "bg-slate-100 text-[#020617]",
   },
   {
     title: "APROBACIONES",
     description: "Consulta tus aprobaciones por las financieras.",
     icon: CheckCircle2,
-    accent: "bg-[#e7f7ef] text-[#0AAC5F]",
+    accent: "bg-slate-100 text-[#020617]",
     target: "approvals",
     isNew: true,
   },
@@ -88,7 +88,7 @@ export default function DashboardScreen({
               onClick={() => {
                 if (target) handleFeatureClick(target)
               }}
-              className="flex w-full items-center justify-between rounded-2xl bg-white px-5 py-4 text-left shadow-sm shadow-[#0AAC5F]/10 transition hover:shadow-md"
+              className="flex w-full items-center justify-between rounded-2xl bg-white px-5 py-4 text-left shadow-sm shadow-black/5 transition hover:shadow-md"
             >
               <div className="flex items-start gap-4">
                 <div className={`flex h-12 w-12 items-center justify-center rounded-full ${accent}`}>

@@ -38,7 +38,7 @@ const getFinancierColor = (financier: string) => {
     case "COPPEL":
       return "bg-blue-100 text-blue-700"
     case "CREDITAS":
-      return "bg-green-100 text-green-700"
+      return "bg-slate-100 text-slate-700"
     case "RAPIAUTO":
       return "bg-cyan-100 text-cyan-700"
     default:
@@ -54,8 +54,8 @@ const STATUS_STYLES: Record<
     label: "VIGENTE",
     border: "border-l-4 border-[#0AAC5F]",
     badge: "bg-[#0AAC5F] text-white",
-    accentText: "text-[#0AAC5F]",
-    accentBox: "bg-emerald-50/50 border border-emerald-100",
+    accentText: "text-gray-900",
+    accentBox: "bg-gray-50 border border-gray-100",
   },
   "por-vencer": {
     label: "POR VENCER",
@@ -250,8 +250,8 @@ export default function ApprovalsScreen({ onNavigate, userData }: ApprovalsScree
                 onClick={() => setSeguimientoDe(approval)}
                 className={`flex w-full items-center justify-center gap-2 rounded-lg border-2 px-3 py-2.5 transition active:scale-95 ${
                   status === "por-vencer"
-                    ? "border-[#F59E0B] bg-[#F59E0B]/10 text-[#F59E0B] hover:bg-[#F59E0B]/20"
-                    : "border-[#0AAC5F] bg-[#0AAC5F]/10 text-[#0AAC5F] hover:bg-[#0AAC5F]/20"
+                    ? "border-[#F59E0B] bg-white text-[#F59E0B] hover:bg-amber-50"
+                    : "border-[#020617] bg-white text-[#020617] hover:bg-gray-50"
                 }`}
               >
                 <FileText className="h-4 w-4" strokeWidth={2.2} />
@@ -270,7 +270,7 @@ export default function ApprovalsScreen({ onNavigate, userData }: ApprovalsScree
                   <MessageSquare className="h-3 w-3" strokeWidth={2.4} />
                   SEGUIMIENTO
                 </span>
-                <span className="rounded-full bg-[#0AAC5F]/10 px-2 py-0.5 text-[9px] font-bold text-[#0AAC5F]">
+                <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[9px] font-bold text-gray-700">
                   {seguimiento.tipificacion.etiqueta}
                 </span>
               </div>
@@ -347,7 +347,7 @@ export default function ApprovalsScreen({ onNavigate, userData }: ApprovalsScree
         <div className="flex border-b bg-gray-50/50">
           {(
             [
-              { id: "vigente", label: "VIGENTE", color: "#0AAC5F", activeBg: "bg-[#0AAC5F]/10", activeText: "text-[#0AAC5F]", badge: "bg-[#0AAC5F]" },
+              { id: "vigente", label: "VIGENTE", color: "#0AAC5F", activeBg: "bg-white", activeText: "text-[#020617]", badge: "bg-[#0AAC5F]" },
               { id: "por-vencer", label: "POR VENCER", color: "#F59E0B", activeBg: "bg-[#F59E0B]/10", activeText: "text-[#F59E0B]", badge: "bg-[#F59E0B]" },
               { id: "vencida", label: "VENCIDA", color: "#DC2626", activeBg: "bg-[#DC2626]/10", activeText: "text-[#DC2626]", badge: "bg-[#DC2626]" },
             ] as const
@@ -391,10 +391,10 @@ export default function ApprovalsScreen({ onNavigate, userData }: ApprovalsScree
                   <div key={group.agencyName} className="rounded-xl border border-gray-200 bg-white shadow-sm">
                     <button
                       onClick={() => toggleAgency(group.agencyName)}
-                      className="w-full flex items-center gap-3 border-b border-gray-100 bg-gradient-to-r from-[#0AAC5F]/5 to-[#0AAC5F]/10 px-4 py-3 transition hover:from-[#0AAC5F]/10 hover:to-[#0AAC5F]/15"
+                      className="w-full flex items-center gap-3 border-b border-gray-100 bg-gray-50 px-4 py-3 transition hover:bg-gray-100"
                     >
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0AAC5F]/20">
-                        <Building2 className="h-4 w-4 text-[#0AAC5F]" strokeWidth={2.2} />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white border border-gray-200">
+                        <Building2 className="h-4 w-4 text-[#020617]" strokeWidth={2.2} />
                       </div>
                       <div className="flex-1 text-left">
                         <h3 className="text-sm font-bold text-gray-900">{group.agencyName}</h3>
@@ -403,13 +403,13 @@ export default function ApprovalsScreen({ onNavigate, userData }: ApprovalsScree
                         </p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="flex h-6 items-center justify-center rounded-full bg-[#0AAC5F] px-2.5">
+                        <div className="flex h-6 items-center justify-center rounded-full bg-[#020617] px-2.5">
                           <span className="text-[10px] font-bold text-white">{group.count}</span>
                         </div>
                         {isExpanded ? (
-                          <ChevronUp className="h-5 w-5 text-[#0AAC5F]" strokeWidth={2} />
+                          <ChevronUp className="h-5 w-5 text-gray-400" strokeWidth={2} />
                         ) : (
-                          <ChevronDown className="h-5 w-5 text-[#0AAC5F]" strokeWidth={2} />
+                          <ChevronDown className="h-5 w-5 text-gray-400" strokeWidth={2} />
                         )}
                       </div>
                     </button>
@@ -569,7 +569,7 @@ function SeguimientoModal({
           ))}
         </select>
         {seleccionada && (
-          <p className={`mt-1.5 text-[11px] ${seleccionada.seguimientoAbierto ? "text-[#15803d]" : "text-gray-500"}`}>
+          <p className={`mt-1.5 text-[11px] ${seleccionada.seguimientoAbierto ? "text-gray-700" : "text-gray-500"}`}>
             {seleccionada.seguimientoAbierto
               ? "✓ Seguimiento abierto: podrás actualizar el comentario más adelante."
               : "Esta tipificación cierra el seguimiento de la solicitud."}
@@ -762,8 +762,8 @@ function IniciarModal({
     <ModalShell title="Iniciar solicitud de nuevo" onClose={resultado ? onSaved : onClose}>
       {resultado ? (
         <div className="text-center">
-          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
-            <ShieldCheck className="h-7 w-7 text-[#15803d]" strokeWidth={2.2} />
+          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-slate-100">
+            <ShieldCheck className="h-7 w-7 text-[#020617]" strokeWidth={2.2} />
           </div>
           <h3 className="mb-1 text-base font-bold text-gray-900">Reingreso completado</h3>
           <p className="mb-1 text-sm text-gray-600">
@@ -818,7 +818,7 @@ function IniciarModal({
         </>
       ) : (
         <>
-          <div className="mb-4 rounded-lg border border-emerald-100 bg-emerald-50 px-3 py-2.5 text-xs leading-relaxed text-[#0A7A45]">
+          <div className="mb-4 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-xs leading-relaxed text-gray-600">
             Al confirmar se creará una <strong>nueva solicitud</strong> con estos datos y se{" "}
             <strong>re-consultará el buró</strong> del cliente. El equipo de aprobaciones recibirá la solicitud sin que
             tengas que capturar todo de nuevo.
