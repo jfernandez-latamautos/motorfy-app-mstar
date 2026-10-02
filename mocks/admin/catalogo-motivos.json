@@ -1,0 +1,56 @@
+{
+  "descripcion": "Catálogo de tipificaciones para el seguimiento de aprobaciones. Basado en el catálogo REAL del equipo de aprobaciones (pestaña TIPIFICACIONES del Excel 'APROBADOS FINANCIERAS 2026' + fases de pérdida de Pipefy), levantado de la grabación del 29-may. Administrable desde Admin Motorfy; la app lo consume para el dropdown del modal 'Dar seguimiento'.",
+  "version": 2,
+  "actualizadoEl": "2026-07-07T09:00:00-06:00",
+  "reglas": {
+    "seguimientoAbierto": "Las tipificaciones con seguimientoAbierto=true mantienen habilitado el botón 'Dar seguimiento' para que el vendedor actualice su comentario. Las demás cierran el seguimiento.",
+    "excluidasDeLaApp": "FIRMADO y 'Se cancela por vigencia' NO se muestran en el selector de la app: se derivan automáticamente (paso a firma/compras en Pipedrive y vencimiento, respectivamente).",
+    "sinComentario": "Cuando una solicitud no tiene seguimiento, en reportes y filtros del Admin se muestra como 'Sin comentario'."
+  },
+  "tipificaciones": [
+    { "codigo": "PENDIENTE_DOCUMENTOS_AUTO", "etiqueta": "Pendiente Documentos del Auto", "seguimientoAbierto": true, "visibleEnApp": true, "nota": "Incluye factura (globalizado en la reunión)" },
+    { "codigo": "PENDIENTE_CONFIRMAR_COTIZACION", "etiqueta": "Pendiente de confirmar Cotización", "seguimientoAbierto": true, "visibleEnApp": true },
+    { "codigo": "PENDIENTE_DE_UNIDAD", "etiqueta": "Pendiente de Unidad", "seguimientoAbierto": true, "visibleEnApp": true },
+    { "codigo": "BUSQUEDA_DE_UNIDAD", "etiqueta": "Búsqueda de Unidad", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "BUSCANDO_UNIDAD_POR_CAPACIDAD", "etiqueta": "Buscando Unidad Por Capacidad", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "PROCESO_DE_FIRMA", "etiqueta": "Proceso de Firma", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "PETICION_DE_CONTRATO", "etiqueta": "Petición de Contrato", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "PENDIENTE_CARTA_HABERES", "etiqueta": "Pendiente a la carta de Haberes", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "PENDIENTE_LIBERACION_TRANSUNION", "etiqueta": "Pendiente de liberación de TransUnion", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "PENDIENTE_DE_SEGUIMIENTO", "etiqueta": "Pendiente de Seguimiento", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "NO_ACEPTA_TASA", "etiqueta": "No Acepta Condiciones - Tasa", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "NO_ACEPTA_AJUSTE_ENGANCHE", "etiqueta": "No Acepta Ajuste de Enganche", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "MEJORES_CONDICIONES_OTRA_FINANCIERA", "etiqueta": "CR - Mejores condiciones otra financiera", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "CLIENTE_COMPRA_DE_CONTADO", "etiqueta": "CLIENTE - Directos Cliente - Compra de Contado", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "NO_LE_INTERESA_DE_INICIO", "etiqueta": "No le interesa de inicio", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "TITULAR_CANCELA_TRAMITE", "etiqueta": "Titular Cancela el trámite", "seguimientoAbierto": false, "visibleEnApp": true },
+    { "codigo": "STANDBY", "etiqueta": "Standby (viaje, tema familiar, etc.)", "seguimientoAbierto": true, "visibleEnApp": true, "nota": "Propuesto en la reunión para casos de espera del cliente" },
+    { "codigo": "FIRMADO", "etiqueta": "FIRMADO", "seguimientoAbierto": false, "visibleEnApp": false, "nota": "Se deriva automáticamente al mover la solicitud a firma/compras" },
+    { "codigo": "SE_CANCELA_POR_VIGENCIA", "etiqueta": "Se cancela por vigencia", "seguimientoAbierto": false, "visibleEnApp": false, "nota": "Se deriva automáticamente cuando la aprobación vence" }
+  ],
+  "motivosDePerdida": {
+    "descripcion": "Catálogo para la acción PERDER sobre solicitudes vencidas (mismo flujo de 'Perder Solicitud' del Admin). Unifica las fases de pérdida del pipe de Pipefy 'Financiera Creditas'.",
+    "motivos": [
+      { "codigo": "PERDIDO_INCONTACTABLE", "etiqueta": "Perdido x Incontactable" },
+      { "codigo": "PERDIDO_OTRO_BANCO", "etiqueta": "Perdido x Otro Banco" },
+      { "codigo": "PERDIDO_COMPRO_DE_CONTADO", "etiqueta": "Perdido x Compró de contado" },
+      { "codigo": "PERDIDO_TASA", "etiqueta": "Perdido x Tasa" },
+      { "codigo": "PERDIDO_NO_ACEPTA_AJUSTE_ENGANCHE", "etiqueta": "Perdido / No Acepta ajuste de enganche" },
+      { "codigo": "PERDIDO_MOTIVOS_PERSONALES", "etiqueta": "Perdido x Motivos Personales" },
+      { "codigo": "PERDIDO_POLITICA", "etiqueta": "PERDIDO - POLÍTICA" },
+      { "codigo": "PERDIDO_SE_VENDIO_UNIDAD", "etiqueta": "Perdido. Se vendió unidad" },
+      { "codigo": "PERDIDO_RECHAZO_DE_UNIDAD", "etiqueta": "Rechazo de unidad" },
+      { "codigo": "PERDIDO_SE_GASTO_ENGANCHE", "etiqueta": "Se gastó el enganche" },
+      { "codigo": "PERDIDO_NO_ENVIA_DOCUMENTOS", "etiqueta": "RECHAZADO CLIENTE - No envía documentos" },
+      { "codigo": "PERDIDO_VIGENCIA_MAYOR_30", "etiqueta": "Vigencia mayor a 30 días" },
+      { "codigo": "TRASPASO", "etiqueta": "Traspaso" }
+    ]
+  },
+  "vigenciasPorFinanciera": {
+    "descripcion": "Días de vigencia de una aprobación, contados desde la asignación del banco de cierre en el Admin. Acordado en la reunión del 29-may.",
+    "COPPEL": { "dias": 30, "nota": "Pendiente confirmar si son 45 (Isabel quedó de validar con Osvaldo/Ricardo)" },
+    "CREDITAS": { "dias": 30 },
+    "RAPIAUTO": { "dias": 27, "nota": "La financiera cuenta 30 desde la creación de la tarjeta; se restan ~3 días de proceso" },
+    "porVencerDias": 10
+  }
+}

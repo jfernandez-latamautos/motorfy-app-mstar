@@ -1,0 +1,38 @@
+{
+  "descripcion": "Juego de datos mock: agregados que el Admin Motorfy calcula sobre el feedback recibido desde la app, para su dashboard de aprobaciones.",
+  "version": 1,
+  "periodo": { "desde": "2026-01-01", "hasta": "2026-01-22" },
+  "totales": {
+    "feedbackRecibido": 10,
+    "porTipo": { "seguimiento": 5, "perdida": 3, "reinicio": 2 },
+    "porRolAutor": { "vendedor": 7, "asesor_financiamiento": 3 },
+    "pendientesDeRevision": 5,
+    "revisados": 4,
+    "escalados": 1
+  },
+  "porFinanciera": [
+    { "financiera": "COPPEL", "seguimientos": 3, "perdidas": 1, "reinicios": 0 },
+    { "financiera": "CREDITAS", "seguimientos": 2, "perdidas": 2, "reinicios": 2 },
+    { "financiera": "RAPIAUTO", "seguimientos": 0, "perdidas": 0, "reinicios": 1 }
+  ],
+  "porAgencia": [
+    { "agenciaId": "AG-001", "agencia": "AUTO SHOP CUERNAVACA", "feedback": 2, "perdidas": 1 },
+    { "agenciaId": "AG-003", "agencia": "BMW CANCÚN(FARRERA)", "feedback": 1, "perdidas": 0 },
+    { "agenciaId": "AG-004", "agencia": "AUTOS GEZZA", "feedback": 1, "perdidas": 0 },
+    { "agenciaId": "AG-005", "agencia": "AUTOCONSIGNACIONES GARCIAS", "feedback": 1, "perdidas": 0 },
+    { "agenciaId": "AG-006", "agencia": "AUTOS GP", "feedback": 2, "perdidas": 0 },
+    { "agenciaId": "AG-007", "agencia": "AUTOS SAN ISIDRO", "feedback": 1, "perdidas": 0 },
+    { "agenciaId": "AG-008", "agencia": "CALL CENTER ATM", "feedback": 1, "perdidas": 1 },
+    { "agenciaId": "AG-009", "agencia": "SEMINUEVOS TLAXCALA YORDANIS", "feedback": 1, "perdidas": 1 }
+  ],
+  "motivosDePerdidaTop": [
+    { "codigo": "PER_COMPRO_OTRA_AGENCIA", "etiqueta": "El cliente compró en otra agencia", "conteo": 1 },
+    { "codigo": "PER_NO_LOCALIZABLE", "etiqueta": "Cliente no localizable", "conteo": 1 },
+    { "codigo": "PER_COMPRO_CONTADO", "etiqueta": "El cliente compró de contado", "conteo": 1 }
+  ],
+  "alertas": {
+    "aprobacionesPorVencerSinFeedback": 3,
+    "aprobacionesVencidasSinAccion": 6,
+    "descripcion": "Solicitudes en estado por-vencer/vencida que no tienen ningún registro de feedback; el admin debería poder notificar al vendedor o asesor responsable."
+  }
+}
