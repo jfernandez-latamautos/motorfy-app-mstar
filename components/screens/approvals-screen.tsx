@@ -308,7 +308,7 @@ export default function ApprovalsScreen({ onNavigate, userData }: ApprovalsScree
   }
 
   return (
-    <div className="relative flex h-full w-full flex-col overflow-hidden bg-[#020617]">
+    <div className="relative flex h-full w-full flex-col overflow-x-hidden overflow-y-hidden bg-[#020617]">
       <Toaster position="top-center" richColors />
       <StatusBar tone="light" />
 

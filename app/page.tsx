@@ -76,7 +76,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen w-screen bg-[#F0F7FA] overflow-hidden">
+    <div className="h-screen w-screen overflow-x-hidden overflow-y-hidden bg-[#F0F7FA]">
       {/* iPhone frame for development */}
       <div className="h-full w-full max-w-md mx-auto bg-white shadow-2xl shadow-[#020617]/15 flex flex-col relative rounded-[40px] overflow-hidden">
         {/* Screen content */}

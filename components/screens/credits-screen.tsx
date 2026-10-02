@@ -137,7 +137,7 @@ export default function CreditsScreen({ onNavigate, userData }: CreditsScreenPro
   }
 
   return (
-    <div className="relative flex h-full w-full flex-col overflow-hidden bg-white">
+    <div className="relative flex h-full w-full flex-col overflow-x-hidden overflow-y-hidden bg-white">
       <StatusBar />
 
       {/* Header */}
@@ -151,7 +151,7 @@ export default function CreditsScreen({ onNavigate, userData }: CreditsScreenPro
               <SlidersHorizontal size={18} strokeWidth={2.1} />
             </button>
           </div>
-          <h1 className="text-[13px] font-semibold uppercase tracking-[0.28em] text-gray-600">
+          <h1 className="min-w-0 flex-1 truncate px-2 text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-gray-600">
             SOLICITUDES DE CRÉDITO
           </h1>
           <button className="rounded-full bg-[#0AAC5F] p-2 text-white transition hover:bg-[#099B56]">
@@ -166,7 +166,7 @@ export default function CreditsScreen({ onNavigate, userData }: CreditsScreenPro
       </div>
 
       {/* Tabs */}
-      <div className="flex overflow-x-auto border-b px-4">
+      <div className="grid w-full grid-cols-4 border-b px-2">
         {[
           { id: "process", label: "EN PROCESO" },
           { id: "incomplete", label: "INCOMPLETAS" },
@@ -176,11 +176,11 @@ export default function CreditsScreen({ onNavigate, userData }: CreditsScreenPro
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`relative py-3 px-3 text-[11px] font-semibold tracking-[0.18em] whitespace-nowrap ${
+            className={`relative min-w-0 py-3 px-1 text-center text-[10px] font-semibold tracking-[0.08em] ${
               activeTab === tab.id ? "text-[#0AAC5F]" : "text-gray-400"
             }`}
           >
-            {tab.label}
+            <span className="block truncate">{tab.label}</span>
             {activeTab === tab.id && (
               <span className="absolute inset-x-2 bottom-0 h-0.5 rounded-full bg-[#0AAC5F]" />
             )}

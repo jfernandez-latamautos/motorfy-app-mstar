@@ -1,7 +1,5 @@
 "use client"
 
-import Image from "next/image"
-
 type BrandLogoProps = {
   width?: number
   height?: number
@@ -15,18 +13,17 @@ export function BrandLogo({
   height = 52,
   className,
   variant = "white",
-  priority = false,
 }: BrandLogoProps) {
   const src = variant === "white" ? "/mstar-logo-white.svg" : "/mstar-logo-dark.svg"
 
   return (
-    <Image
+    <img
       src={src}
       alt="MStar"
       width={width}
       height={height}
-      priority={priority}
       className={className}
+      style={{ width, height }}
     />
   )
 }
